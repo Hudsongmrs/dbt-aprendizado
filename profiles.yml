@@ -1,0 +1,10 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: teste-etl-2
+      dataset: dbt_tratamento
+      threads: 1
+ 

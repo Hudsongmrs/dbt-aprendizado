@@ -1,0 +1,23 @@
+name: 'my_dbt_project'
+version: '1.0.0'
+config-version: 2
+
+# Nome do perfil a ser usado no profiles.yml
+profile: 'default'
+
+# Diretórios onde o dbt deve buscar arquivos
+model-paths: ["models"]
+seed-paths: ["seeds"]
+
+target-path: "target"  # Diretório que armazena SQL compilado
+clean-targets:         # Diretórios a serem limpos com `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+# Configuração global dos modelos
+models:
+  my_dbt_project:
+    staging:
+      +materialized: view  # Define os modelos dentro de "staging" como view
+    marts:
+      +materialized: table  # Se houver modelos transformados, eles podem ser tabelas
