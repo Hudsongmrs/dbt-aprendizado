@@ -21,9 +21,9 @@ models:
       +materialized: view  # Define os modelos dentro de "staging" como view
     marts:
       +materialized: table  # Se houver modelos transformados, eles podem ser tabelas
-      
+
 seeds:
-  my_new_project:
+  my_dbt_project:  # Corrigido para o nome do seu projeto
     dados:
       +schema: dbt_imports
       +column_types:
